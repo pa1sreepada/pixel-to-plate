@@ -1,22 +1,33 @@
 {
   "expo": {
-    "name": "food-api-frontend",
-    "slug": "food-api-frontend",
+    "name": "Pixel to Plate",
+    "slug": "pixel-to-plate",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/splash.png",
     "scheme": "foodapifrontend",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Allow $(PRODUCT_NAME) to access your photos to select images for recipe recognition.",
+        "NSCameraUsageDescription": "Allow $(PRODUCT_NAME) to access your camera to take photos for recipe recognition."
+      },
+      "bundleIdentifier": "com.anonymous.pixeltoplate"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "permissions": [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.CAMERA"
+      ],
+      "edgeToEdgeEnabled": true,
+      "package": "com.anonymous.pixeltoplate"
     },
     "web": {
       "bundler": "metro",
@@ -28,7 +39,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/splash.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
